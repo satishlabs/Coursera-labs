@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            width: 40%;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        table {
+            margin: auto;
+        }
+        td {
+            padding: 10px;
+        }
+        input[type="text"], input[type="submit"], input[type="reset"] {
+            padding: 8px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"], input[type="reset"] {
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+        }
+        input[type="reset"] {
+            background-color: #dc3545;
+        }
+        fieldset {
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        legend {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Simple Calculator</h2>
+        <form action="CalculatorServlet" method="post">
+            <table>
+                <tr>
+                    <td><label for="text1">Enter First Number:</label></td>
+                    <td><input type="text" id="text1" name="text1" required></td>
+                </tr>
+                <tr>
+                    <td><label for="text2">Enter Second Number:</label></td>
+                    <td><input type="text" id="text2" name="text2" required></td>
+                </tr>
+            </table>
+
+            <fieldset>
+                <legend>Select an Operation:</legend>
+                <label><input type="radio" name="operation" value="+" required> Addition</label>
+                <label><input type="radio" name="operation" value="-"> Subtraction</label>
+                <label><input type="radio" name="operation" value="*"> Multiply</label>
+                <label><input type="radio" name="operation" value="/"> Divide</label>
+            </fieldset>
+
+            <input type="submit" value="Calculate">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+
+</body>
+</html>
